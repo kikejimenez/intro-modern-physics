@@ -1,0 +1,140 @@
+\documentclass[0pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\newcommand{\commentedbox}[2]{%
+  \mbox{
+    \begin{tabular}[t]{@{}c@{}}
+    $\boxed{\displaystyle#1}$\\
+    #2
+    \end{tabular}%
+  }%
+}
+
+\newcommand{\vtor}[2]{
+    \langle #1 , #2 \rangle
+}
+
+ \geometry{
+ a4paper,
+ total = {150mm,237mm},
+ left = 25mm,
+ top = 25mm,
+ tmargin = 10mm}
+
+\title{Ejercicio 4.7 - Special Relativity. Woodhouse}
+\author{García Parra Pedro Antonio}
+\date{Mayo 2019}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\maketitle
+
+\textbf{Ejercicio 4.7} En el ejemplo 4.2, muestra que si $\alpha$ y $\beta$ son, respectivamente, los angulos entre $\Vec{u}$ y $\Vec{v}$, y entre $\Vec{u}$ y $\Vec{w}$, entonces
+\begin{equation}
+    \cos^2\alpha = \frac{(\gamma(u) + 1)(\gamma(v) - 1)}{(\gamma(u) - 1)(\gamma(v) + 1)}
+\end{equation}
+Con una formula similar para $\cos^2\beta$. Dedusca que $\tan\alpha\tan\beta = 2/(1 + \gamma(u))$. ¿Cual es el resultado clasico correspondiente? (Hint: expresa $\gamma(w)^2\Vec{w}\cdot\Vec{w}$ en terminos de $\Vec{u}\cdot\Vec{v}$, $\gamma(u)$ y $\gamma(v)$.) \\
+
+\textbf{Soluci\'on}\\
+
+Para realizar este ejercicio se utilizar\'a la siguiente igualdad:
+\begin{equation} \label{gammac2}
+    \gamma(v)^2v^2 = c^2(\gamma(v)^2 - 1)
+\end{equation}
+
+Por conservaci\'on de 4-momento:
+\begin{equation*}
+    \begin{split}
+        m\vtor{m}{c} + m\gamma(u)\vtor{c}{\Vec{u}} &= m\gamma(v)\vtor{v}{\Vec{v}} + m\gamma(w)\vtor{c}{\Vec{w}}\\
+        \vtor{1 + \gamma(u)}{\gamma(u)\Vec{u}} &= \vtor{\gamma(v) + \gamma(w)}{\gamma(v)\Vec{v} + \gamma(w)\Vec{w}}
+    \end{split}
+\end{equation*}
+De aqu\'i, podemos obtener, igualando componentes y despejando:
+
+\begin{equation} \label{w}
+    \gamma(w) = \gamma(u) - \gamma(v) + 1
+\end{equation}
+\begin{equation} \label{ww}
+    \gamma(w)\Vec{w} = \gamma(u)\Vec{u} - \gamma(v)\Vec{v}
+\end{equation}
+Tomando el modulo cuadrado de \eqref{ww}:
+
+\begin{equation*}
+    \begin{split}
+        \gamma(w)^2w^2 &= \gamma(u)^2u^2 + \gamma(v)^2v^2 - 2\gamma(u)\gamma(v)\Vec{u}\cdot\Vec{v}\\
+        2\gamma(u)\gamma(v)\Vec{u}\cdot\Vec{v} &= \gamma(u)^2u^2 + \gamma(v)^2v^2 - \gamma(w)^2w^2
+    \end{split}
+\end{equation*}
+
+Utilizando \eqref{gammac2} sobre la ecuaci\'on anterior:
+\begin{equation} \label{2punto}
+    2\gamma(u)\gamma(v)\Vec{u}\cdot\Vec{v} = c^2(\gamma(u)^2 + \gamma(v)^2 - \gamma(w)^2 - 1)
+\end{equation}
+
+Por otro lado, y utilizando \eqref{w}
+\begin{equation*}
+    \begin{split}
+        \gamma(u)^2 + \gamma(v)^2 - \gamma(w)^2 - 1 &= \gamma(u)^2 + \gamma(v)^2 - (\gamma(u) - \gamma(v) + 1)^2 - 1 \\
+        &= \gamma(u)^2 + \gamma(v)^2 - \gamma(u)^2 - \gamma(v)^2 - 1 + 2\gamma(u)\gamma(v) - 2\gamma(u) + 2\gamma(v) - 1 \\
+        &= 2\gamma(u)\gamma(v) + 2\gamma(v) - 2\gamma(u) - 2 \\
+        &= 2(\gamma(u)\gamma(v) + \gamma(v) - \gamma(u) - 1) \\
+        &= 2(\gamma(u) + 1)(\gamma(v) - 1)
+    \end{split}
+\end{equation*}
+Sustituyendo esto en \eqref{2punto} y desarrollando:
+    \begin{equation*}
+        \begin{split}
+              2\gamma(u)\gamma(v)\Vec{u}\cdot\Vec{v} &= c^2[2(\gamma(u) + 1)(\gamma(v) - 1)] \\
+              \Vec{u}\cdot\Vec{v} &= \frac{c^2(\gamma(u) + 1)(\gamma(v) - 1)}{\gamma(u)\gamma(v)} \\
+              \cos\alpha &= \frac{c^2(\gamma(u) + 1)(\gamma(v) - 1)}{|u||v|\gamma(u)\gamma(v)} \\
+              \cos^2\alpha &= \frac{c^4(\gamma(u) + 1)^2(\gamma(v) - 1)^2}{u^2v^2\gamma(u)^2\gamma(v)^2} 
+        \end{split}
+    \end{equation*}
+Utilizando \eqref{gammac2} nuevamente:
+    \begin{equation*}
+        \begin{split}
+            \cos^2\alpha &= \frac{c^4(\gamma(u) + 1)^2(\gamma(v) - 1)^2}{c^2(\gamma(u)^2 - 1)c^2(\gamma(v)^2 - 1)} \\ 
+            \cos^2\alpha &= \frac{(\gamma(u) + 1)^2(\gamma(v) - 1)^2}{(\gamma(u) - 1)(\gamma(u) + 1)(\gamma(v) - 1)(\gamma(v) + 1)}
+        \end{split}
+    \end{equation*}
+    
+    \begin{equation*}
+        \boxed{\cos^2\alpha = \frac{(\gamma(u) + 1)(\gamma(v) - 1)}{(\gamma(u) - 1)(\gamma(v) + 1)}}
+    \end{equation*}
+    
+    Realizando el mismo procedimiento ahora en t\'erminos de $\Vec{u}$ y $\Vec{w}$ obtenemos que:
+    \begin{equation}
+        \cos^2\beta = \frac{(\gamma(u) + 1)(\gamma(w) - 1)}{(\gamma(u) - 1)(\gamma(w) + 1)}
+    \end{equation}
+    \\
+    Para encontrar el valor de $\tan\alpha$ y $\tan\beta$ primero se deber\'a usar la relacion trigonom\'etrica de $\sin^2\theta = 1 - \cos^2\theta$ para obtener $\sin^2\alpha$ y $\sin^2\beta$. Posteriormente usamos que $\tan^2\theta = \frac{\sin^2\theta}{\cos^2\theta}$. As\'i obtenemos que:
+    \begin{equation}\label{alpha}
+        \tan^2\alpha = \frac{(\gamma(u) - 1)(\gamma(v) + 1) - (\gamma(u) + 1)(\gamma(v) - 1)}{(\gamma(u) + 1)(\gamma(v) - 1)}
+    \end{equation}
+        \begin{equation}\label{beta}
+        \tan^2\beta = \frac{(\gamma(u) - 1)(\gamma(w) + 1) - (\gamma(u) + 1)(\gamma(w) - 1)}{(\gamma(u) + 1)(\gamma(w) - 1)}
+    \end{equation}
+    
+    Multiplicando las ecuaciones \eqref{alpha} y \eqref{beta} y simplificando un poco, tenemos que:
+    
+    \begin{equation*}
+        \begin{split}
+            \tan^2\alpha\tan^2\beta &= \frac{4(\gamma(u) - \gamma(v)) \ (\gamma(u) - \gamma(w))}{(\gamma(u) - 1)^2(\gamma(v) - 1)(\gamma(u) - 1)}
+        \end{split}
+    \end{equation*}
+    Utilizando la ecuaci\'on \eqref{w} podemos obtener:
+    \begin{equation*}
+        \tan^2\alpha\tan^2\beta = \frac{4}{(\gamma(u) + 1)^2}
+    \end{equation*}
+    Finalmente:
+    \begin{equation}
+        \boxed{\tan\alpha\tan\beta = \frac{2}{\gamma(u) + 1}}
+    \end{equation}
+\end{document}
