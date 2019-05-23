@@ -1,0 +1,96 @@
+\documentclass[0pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newcommand{\commentedbox}[2]{%
+  \mbox{
+    \begin{tabular}[t]{@{}c@{}}
+    $\boxed{\displaystyle#1}$\\
+    #2
+    \end{tabular}%
+  }%
+}
+ \geometry{
+ a4paper,
+ total = {150mm,237mm},
+ left = 25mm,
+ top = 25mm,
+ tmargin = 10mm}
+
+\title{Exercise 3.11 - Special Relativity. Woodhouse}
+\author{García Parra Joel Alberto}
+\date{Mayo 2019}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+\maketitle
+
+\section{Exercise 3.11}
+Show that for the constant acceleration wordline in this section, the proper acceleration is $cd\theta/d\tau$, where $\theta$ is the rapidity (Excercise 2.14).
+\section{Solution}
+\begin{itemize}
+    \item First of all we take the equation that gives the Exercise 2.14: 
+        \begin{equation}
+            c\tanh{\theta}=v
+        \end{equation}
+    Note that this equation refers to a time $t$ in the frame.
+    \par Now, let's derivate this equation with respect of the propper time $\tau$.
+        \begin{equation}
+            \frac{dv}{d\tau} = c\frac{d(\tanh{\theta})}{d\tau}
+        \end{equation}
+    \item In \textbf{(2)}, we can multiplie by $1=\frac{d\theta}{d\theta}$ and get:
+        \begin{equation}
+        \begin{split}
+            \frac{d(\tanh{\theta})}{d\tau}(1)= & c\frac{d(\tanh{\theta})}{d\tau}\left(\frac{d\theta}{d\theta}\right)\\
+            & = c\frac{d\tanh{\theta}}{d\theta}\left(\frac{d\theta}{d\tau}\right)
+        \end{split}
+        \end{equation}
+    \item We can take the part of $\frac{d(\tanh{\theta})}{d\theta}$ and actually derivate it, but first we put $\tanh{\theta}$ in his exponential form to derivate it without using any trigonometric identity:
+        \begin{equation}
+            \tanh{\theta} = \frac{e^{\theta}-e^{-\theta}}{e^{\theta}+e^{-\theta}}
+        \end{equation}
+    \par Now, deriving with respect of $\theta$:
+        \begin{equation}
+        \begin{split}
+            \frac{d}{d\theta}\left(\frac{e^{\theta}-e^{-\theta}}{e^{\theta}+e^{-\theta}}\right) = & \frac{\left(e^{\theta}+e^{-\theta}\right)\left(e^{\theta}+e^{-\theta}\right)-\left(e^{\theta}-e^{-\theta}\right)\left(e^{\theta}-e^{-\theta}\right)}{\left(e^{\theta}+e^{-\theta}\right)^2} \\
+            & = \frac{\left(e^{\theta}+e^{-\theta}\right)^2-\left(e^{\theta}-e^{-\theta}\right)^2}{\left(e^{\theta}+e^{-\theta}\right)^2} \\
+            & = 1 - \left(\frac{e^{\theta}-e^{-\theta}}{e^{\theta}+e^{-\theta}}\right)^2 \\
+            & \text{Remmember the (4) equation} \\
+            & = 1 - \left(\tanh{\theta}\right)^2
+        \end{split}
+        \end{equation}
+    \item With this result, we can express $\frac{dv}{d\tau}$ in the next form:
+        \begin{equation}
+            \frac{dv}{d\tau} = c\frac{d\theta}{d\tau}\commentedbox{\left(1-tanh^2\theta\right)}{$dv/d\tau$}
+        \end{equation}
+    \item Using the definition of propper acceleration in this frame, we remmember:
+        \begin{equation}
+            a = \frac{1}{1-v^2/c^2}\frac{dv}{d\tau}
+        \end{equation}
+    \item But, we have defined $v$ at the beginning of the problem, so, let's put that       in the equation:
+        \begin{equation*}
+            v=c\tanh{\theta}
+        \end{equation*}
+        Where if we separate the term $v/c$ and square:
+        \begin{equation}
+            v^2/c^2 = \tanh^2{\theta}
+        \end{equation}
+    \item We have another look to the propper acceleration:
+        \begin{equation*}
+            a = \frac{1}{1-\commentedbox{\tanh^2{\theta}}{$v^2/c^2$}}\frac{dv}{d\tau}
+        \end{equation*}
+    \item Note that we already have $\frac{dv}{d\theta}$, so let's put it in:
+        \begin{equation}
+            a= \frac{1}{1-\tanh^2{\theta}}\commentedbox{\left(c\frac{d\theta}{d\tau}\left(1-\tanh^2{\theta}\right)\right)}{$dv/d\tau$}
+        \end{equation}
+    This equation easily become in to what we have been looking for:
+        \begin{equation}
+            \commentedbox{a = c\frac{d\theta}{d\tau}}{}
+        \end{equation}
+\end{itemize}
+\end{document}
