@@ -1,0 +1,104 @@
+%---------------------------------------------------------------------
+%Inicio
+\documentclass[12pt, A4,spanish,]{report}
+
+%Paquetes
+\usepackage{minted}
+\usepackage{verbatim}
+\usepackage{indentfirst}
+\usepackage{ragged2e}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[spanish]{babel}
+\geometry {a4paper ,  top = 20 mm , right = 20mm, left = 2cm}
+% Idioma español
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+% Idioma español
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+%--------------------------------------------------------------
+% Comienzo del documento
+\begin{document}
+
+%--------------------------------------------------------------
+\section*{Problema 3.1 Woodhouse}
+\large\justify
+\textbf{Muestre que si $X$ y $Y$ son timelike o nulos, y $X^{0}>0$, $Y^{0}>0$, entonces $g(X,Y)>0$. (Pista: utilice la desigualdad de Cauchy-Schwarz.)}
+\\
+\\
+Sabemos que:
+\begin{itemize}
+    \item Si $g(X,X)>0$
+    \item Si $g(X,X)=0$ 
+\end{itemize}
+\\
+\\
+Entonces, de acuerdo al enunciado del problema:
+
+    \[g(X,X)\geq0\]
+
+    \[g(Y,Y)\geq0\]
+Desarrollando $g(X,Y)$ tenemos:
+\[g(X,Y)=X^{0}Y^{0}-X^{1}Y^{1}-X^{2}Y^{2}-X^{3}Y^{3}\]
+
+Podemos reescribir esto como:
+\begin{equation}
+g(X,Y)=X^{0}Y^{0}-\vec{X}\cdot\vec{Y}     
+\end{equation}
+donde $\vec{X}$ y $\vec{Y}$ son vectores de 3 componentes.
+\\
+De la misma forma  para $g(X,X)$ y $g(Y,Y)$:
+
+\begin{equation}
+g(X,X)=(X^{0})^2-\abs{X}^2    
+\end{equation}
+\\
+
+\begin{equation}
+g(Y,Y)=(Y^{0})^2-\abs{\vec{Y}}^2    
+\end{equation}
+\\
+Despejando $X^{0}$ y $Y^{0}$ de (2) y (3):
+\begin{equation}
+ X^{0}=\sqrt{g(X,X)+\abs{\vec{X}}^2}    
+\end{equation}
+\begin{equation}
+ Y^{0}=\sqrt{g(Y,Y)+\abs{\vec{Y}}^2}    
+\end{equation}
+\\
+Sustituyendo (4) y (5) en (1):
+\begin{equation}
+    g(X,Y)=\sqrt{g(X,X)+\abs{\vec{X}}^2}\sqrt{g(Y,Y)+\abs{\vec{Y}}^2}-\vec{X}\cdot\vec{Y}     
+\end{equation}
+
+\\
+Partiendo de que $\abs{\vec{X}}\geq0$ y $\abs{\vec{Y}}\geq0$, podemos afirmar que: 
+
+\[\sqrt{g(X,X)+\abs{\vec{X}}^2}\sqrt{g(Y,Y)+\abs{\vec{Y}}^2}\geq\abs{\vec{Y}}\abs{\vec{X}}\]
+
+\\
+Tomando en consideración esta desigualdad, reescribimos la ecuación (6) como:
+
+\[g(X,Y)\geq\abs{\vec{Y}}\abs{\vec{X}}-\vec{X}\cdot\vec{Y}\]
+
+\\
+Aplicando la desigualdad de Cauchy-Schwartz, la cual establece que:
+
+\[(\vec{X}\cdot\vec{Y})^2 \leq \abs{\vec{Y}}^2\abs{\vec{X}}^2 \]
+
+Aplicando raíz cuadrada en ambos lados y desarrollando esta expresión:
+
+\[\vec{X}\cdot\vec{Y} \leq \abs{\vec{Y}}\abs{\vec{X}} \]
+
+\[  \abs{\vec{Y}}\abs{\vec{X}} - \vec{X}\cdot\vec{Y} \geq 0 \]
+
+\\
+Por lo tanto, podemos afirmar que $g(X,Y)\geq0$.
+\\
+\end{document}}
+
+
+
