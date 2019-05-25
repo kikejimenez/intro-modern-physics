@@ -1,0 +1,104 @@
+\documentclass{FR16} 
+
+\begin{document}
+
+
+\maketitle
+
+
+\newpage
+
+\section*{Statement}
+\subsection*{Una part\'icula de masa en reposo $M$ en reposo decae en una part\'icula de masa en reposo $m$ y un fot\'on. Encuentre la energ\'ia de los productos en t\'erminos de $M$ y $m$.}
+
+La situaci\'on es que una part\'icula de masa en reposo $M$ se encuentra en reposo, por tanto su 4-momento puede ser expresado como
+
+\begin{equation}
+    P^\mu_M = <\frac{E_M}{c}, 0, 0, 0> 
+\end{equation}
+
+Esta part\'icula decae en una part\'icula de masa en reposo $m$ que se encuentra en movimiento (para m\'as facilidad, se considerar\'a que este movimiento es solo en el eje $x$) y un fot\'on, siendo los 4-momentos de cada uno
+
+\begin{equation}
+    P^\nu_m = <\frac{E_m}{c}, P_m, 0, 0>
+\end{equation}
+
+\begin{equation}
+    P^\omega_\gamma = <\frac{E_\gamma}{c}, \frac{-E_\gamma}{c}, 0, 0>
+\end{equation}
+
+El 3-momento del fot\'on fue escrito de esa manera por \'esto:
+
+\begin{equation*}
+    P^\alpha = <\frac{E}{c}, \Vec{p}> = <\frac{E}{c}, m\gamma \Vec{v}> = <\frac{E}{c}, \frac{m\gamma c^2\Vec{v}}{c^2}> = <\frac{E}{c}, \frac{E \Vec{v}}{c^2}>
+\end{equation*}
+
+Se eligi\'o la \'ultima forma de expresi\'on para el fot\'on porque este no tiene masa, y como la velocidad del fot\'on es $c$, y para que el 3-momento se conserve con la part\'icula de masa $m$ respecto a la de masa $M$, por eso las velocidades est\'an en sentidos opuestos.
+
+Ahora, se tiene que el 4-momento se conserva
+
+\begin{equation}
+    \frac{dP^\nu}{d\tau} = 0
+\end{equation}
+
+Usando \textbf{(4)} para conservar \textbf{(1)} a \textbf{(2)} y \textbf{(3)}
+
+\begin{equation*}
+    P^\mu_M = P^\nu_m + P^\omega_\gamma
+\end{equation*}
+
+\begin{equation}
+    <\frac{E_M}{c}, 0, 0, 0> = <\frac{E_m}{c}, P_m, 0, 0> + <\frac{E_\gamma}{c}, \frac{-E_\gamma}{c}, 0, 0>
+\end{equation}
+
+Separando \textbf{(5)} por las componentes que nos interesan:
+
+\begin{equation}
+    \frac{E_M}{c} = \frac{E_m}{c} + \frac{E_\gamma}{c} \longrightarrow E_M = E_m + E_\gamma
+\end{equation}
+
+
+\begin{equation}
+    0 = P_m - \frac{E_\gamma}{c} \longrightarrow P_m = \frac{E_\gamma}{c}
+\end{equation}
+
+
+Se tiene que la energ\'ia y el momento est\'an relacionadas por la expresi\'on
+
+\begin{equation}
+    E^2_m = m^2c^4 + P^2_mc^2
+\end{equation}
+
+Sustituyendo \textbf{(7)} en \textbf{(8)} y despejando $m^4c^2$
+
+\begin{equation}
+    E^2_m - E^2_\gamma = m^2c^4
+\end{equation}
+
+Y desarrollando \textbf{(6)} (sabiendo que como la part\'icula de masa en reposo $M$ est\'a en reposo)
+
+\begin{equation}
+    E_m + E_\gamma = Mc^2
+\end{equation}{}
+
+Con \textbf{(9)} y \textbf{(10)} se construye el sistema de ecuaciones
+
+\begin{center}
+    $E_m + E_\gamma = Mc^2$
+    
+    
+    $E^2_m - E^2_\gamma = m^2c^4$
+\end{center}
+
+Resolviendo para $E_m$ y $E_\gamma$ se llega a
+
+\begin{equation*}
+    E_m = (\frac{M^2 + m^2}{2M})c^2
+\end{equation*}    
+ 
+\begin{equation*}{}   
+    E_\gamma = (\frac{M^2 - m^2}{2M})c^2
+\end{equation*}
+
+
+\end{document}
